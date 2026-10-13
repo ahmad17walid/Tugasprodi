@@ -1,8 +1,9 @@
 <?php
 
+use App\Http\Controllers\ProdiController;
 use Illuminate\Support\Facades\Route;
-use app\Http\Controllers\ProdiController;
-use App\Http\Controllers\ProdiController as ControllersProdiController;
 
-Route::get('/', [ControllersProdiController::class, 'home'])->name('home');
-Route::get('/kontak', [ControllersProdiController::class, 'kontak'])->name('kontak');
+Route::get('/', [ProdiController::class, 'home'])->name('home');
+Route::get('/dosen', [ProdiController::class, 'dosen'])->name('dosen');
+Route::get('/kalender', [ProdiController::class, 'kalender'])->name('kalender');
+Route::get('/kontak', [ProdiController::class, 'kontak'])->name('kontak');
