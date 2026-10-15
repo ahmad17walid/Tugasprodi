@@ -12,17 +12,17 @@
     <header class="bg-blue-900 text-white shadow">
         <div class="container mx-auto px-4 py-4 flex flex-wrap justify-between items-center gap-2">
             <h1 class="text-xl font-bold">STMIK Widya Cipta Dharma</h1>
-            <nav class="space-x-4">
-                <a href="{{ route('home') }}" class="hover:text-blue-200">Beranda</a>
-                <a href="{{ route('dosen') }}" class="hover:text-blue-200">Dosen</a>
-                <a href="{{ route('kalender') }}" class="hover:text-blue-200">Kalender Akademik</a>
-                <a href="{{ route('kontak') }}" class="hover:text-blue-200">Kontak</a>
-            </nav>
+                <nav class="space-x-4">
+                    <a href="{{ route('home') }}" class="hover:text-blue-200">Beranda</a>
+                    <a href="{{ route('dosen') }}" class="hover:text-blue-200">Dosen</a>
+                    <a href="{{ route('kalender') }}" class="hover:text-blue-200">Kalender</a>
+                    <a href="{{ route('kontak') }}" class="hover:text-blue-200">Kontak</a>
+                </nav>
         </div>
     </header>
 
     <!-- Konten Utama -->
-    <main class="container mx-auto px-4 py-8 flex-grow">
+    <main class="container mx-auto px-4 py-8 grow">
         @yield('content')
     </main>
 

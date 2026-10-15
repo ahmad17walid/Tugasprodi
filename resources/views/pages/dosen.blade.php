@@ -4,6 +4,13 @@
 
 @section('content')
     <h1 class="text-3xl font-bold text-blue-900 mb-6">Dosen Program Studi</h1>
+ 
+    <div class="mx-auto my-6 max-w-6xl px-6 text-right">
+        <a href="{{ route('dosen.create') }}"
+        class="inline-block rounded-lg bg-blue-800 px-5 py-3 font-semibold text-white shadow hover:bg-blue-900">
+            + Tambah Dosen
+        </a>
+    </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         @foreach ($dosen as $d)
@@ -21,6 +28,24 @@
                 <p class="text-blue-900 font-medium">{{ $d['jabatan'] }}</p>
                 <p class="text-gray-600 text-sm mt-1">Bidang: {{ $d['bidang'] }}</p>
                 <p class="text-gray-500 text-sm">{{ $d['email'] }}</p>
+            </div>
+            <div class="mt-4 flex justify-center gap-3">
+                <a href="{{ route('dosen.edit', $d->id) }}"
+                class="rounded-lg bg-blue-800 px-5 py-3 text-white transition hover:bg-blue-900">
+                    Edit
+                </a>
+
+                <form action="{{ route('dosen.destroy', $d->id) }}"
+                    method="POST"
+                    onsubmit="return confirm('Yakin ingin menghapus data dosen ini?')">
+                    @csrf
+                    @method('DELETE')
+
+                    <button type="submit"
+                            class="rounded-lg bg-red-700 px-5 py-3 text-white transition hover:bg-red-800">
+                        Hapus
+                    </button>
+                </form>
             </div>
         @endforeach
     </div>
